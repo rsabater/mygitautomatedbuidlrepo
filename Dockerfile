@@ -3,14 +3,14 @@ FROM node:5.11.0-slim
 WORKDIR /app
 
 RUN npm install -g nodemon
-#ADD package.json /app/package.json
+ADD package.json /app/package.json
 #RUN npm config set registry http://registry.npmjs.org
-#RUN npm install && npm ls
-#RUN mv /app/node_modules /node_modules
+RUN npm install && npm ls
+RUN mv /app/node_modules /node_modules
 
-#ADD . /app
+ADD . /app
 
-#ENV PORT 80
-#EXPOSE 80
+ENV PORT 8000
+EXPOSE 8000
 
-#CMD ["node", "server.js"]
+CMD ["node", "server.js"]
